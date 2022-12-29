@@ -2,8 +2,8 @@
   <v-container>
     <v-flex>
       <!--<h1 class="headline text-xs-center grey--text text--lighten-3 mb-4 mt-2">iTunes Search</h1>-->
-      <h1>Welcome to Music !</h1>
-      <h3>I hope u will have fun and live a life to remember!</h3>
+      <h1 class="text-center">Wellcome to Music</h1>
+
       <v-card>
         <v-card-text class="pb-0">
           <v-form @submit.prevent="submitSearch(true)">
@@ -16,12 +16,10 @@
                   dark
                   clearable
                   :label="label"
+                  @keyup.enter="submitSearch()"
+                  @click:append-inner="submitSearch()"
+                  append-inner-icon="mdi-magnify"
                 ></v-text-field>
-              </v-flex>
-              <v-flex x1 class="mt-0">
-                <v-btn outline color="white" type="submit">
-                  <v-icon>search</v-icon>
-                </v-btn>
               </v-flex>
             </v-layout>
           </v-form>
@@ -38,6 +36,7 @@
             <v-flex xs12 class="text-xs-center">
               <v-btn fab outline color="white" small @click="submitSearch()">
                 <v-icon>chevron_left</v-icon>
+                <text>descendent</text>
               </v-btn>
               <span class="title white--text mx-4">{{ page }}</span>
               <v-btn
@@ -48,6 +47,7 @@
                 @click="submitSearch(true)"
               >
                 <v-icon>chevron_right</v-icon>
+                <text>ascendent</text>
               </v-btn>
             </v-flex>
           </v-layout>
@@ -60,7 +60,7 @@
               <v-avatar
                 :tile="true"
                 size="160"
-                class="elevation-4 album-box mt-3"
+                class="elevation-6 album-box mt-3"
                 @click="toiTunesAlbum(album)"
               >
                 <img
@@ -68,7 +68,7 @@
                   alt="Album Cover"
                   class="album-cover"
                 />
-                <v-icon class="play-btn" color="white"
+                <v-icon class="play-btn" color="black"
                   >play_circle_filled</v-icon
                 >
               </v-avatar>
@@ -216,7 +216,7 @@ export default {
 }
 
 .v-card {
-  background: #ffa500;
+  background: #b3b7d0;
   height: 100%;
 }
 
@@ -226,10 +226,10 @@ export default {
 }
 
 .play-btn {
-  padding-top: 110px;
+  padding-top: 50px;
   padding-right: 100px;
   position: absolute;
-  right: 0;
+  right: 0px;
   top: 0;
   display: none;
   z-index: 9;
@@ -237,5 +237,23 @@ export default {
 
 .v-input--radio-group .v-radio {
   margin-bottom: 8px;
+  flex: 40px;
+}
+
+.mt-0 {
+  width: 300px;
+}
+.nyt {
+  font-family: "Bevan", cursive;
+}
+.text-xs-center {
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: "Courier New", Courier, monospace;
+}
+.text-center {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 40px;
 }
 </style>

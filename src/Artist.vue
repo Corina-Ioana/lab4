@@ -1,11 +1,11 @@
 <script setup>
-import TheDeck from "./components/Search.vue";
+import Search from "./components/Search.vue";
+
 </script>
 
 <template>
-  <TheDeck />
+  <Search />
 </template>
-
 <style scoped>
 header {
   line-height: 1.5;
